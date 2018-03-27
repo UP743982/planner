@@ -1,0 +1,15 @@
+{
+  "name": "contentplanner",
+  "version": "1.0.0",
+  "description": "web application to help organise teaching content",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "*",
+    "body-parser": "*"
+  },
+  "author": "up743982",
+  "license": "ISC"
+}
