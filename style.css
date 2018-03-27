@@ -4,7 +4,6 @@
 
 .table-container {
 	width: 900px;
-	background-color: white;
 	margin: 10% 0% 10% 0%;
 }
 
@@ -13,6 +12,23 @@ img{
 	padding: 10px;
 }
 
+.dashboard {
+	background-color: white;
+	border: double 10px #330066;
+}
+
+.dash-text {
+	font-size: 15px;
+	color: white;
+}
+
+h4 {
+	margin-left: 5px;
+}
+
+h1 {
+	color: white;
+}
 
 .container{overflow: hidden}
 .tab{float: left;}

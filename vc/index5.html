@@ -19,22 +19,16 @@
  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-
-
-<!-- jQuery UI CSS -->
-<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
 <link rel="stylesheet" type="text/css" href="style.css">
 <script src="script.js"></script>
-
+        
     </head>
     <body>
         <img src="logo/logo.png">
         <div class="container">
             <div class="tab tab-1">
             <div class="table-container">
-            <h1>Week 1</h1>
-                <table style="background-color: white" class="table table-bordered table-sortable table-hover" id="table" border="1">
+                <table class="table table-bordered table-hover" id="table" border="1">
                 <thead>
                     <tr>
                         <td><strong>Type</strong></td>
@@ -54,53 +48,11 @@
                         <td>Insert Resources</td>
                     </tr>
                 </table>
-                <script>
-$(document).ready(() => {
-
-const $kids = $('#holder').children();
-$kids.on('click', event => {
-    $(event.currentTarget).addClass('active');
-    $(event.currentTarget).siblings().removeClass('active');
-});
-
-
-
-
-});
-
-                </script>
-  <ul id="holder" class="pagination pagination-lg parent">
-  <li class="active"><a href="#week1">1</a></li>
-  <li><a href="#week2">2</a></li>
-  <li><a href="#week3">3</a></li>
-  <li><a href="#">4</a></li>
-  <li><a href="#">5</a></li>
-  <li><a href="#">6</a></li>
-  <li><a href="#">7</a></li>
-  <li><a href="#">8</a></li>
-  <li><a href="#">9</a></li>
-  <li><a href="#">10</a></li>
-  <li><a href="#">11</a></li>
-  <li><a href="#">12</a></li>
-  <li><a href="#">13</a></li>
-  <li><a href="#">14</a></li>
-  <li><a href="#">15</a></li>
-  <li><a href="#">16</a></li>
-  <li><a href="#">17</a></li>
-  <li><a href="#">18</a></li>
-  <li><a href="#">19</a></li>
-  <li><a href="#">20</a></li>
-  <li><a href="#">21</a></li>
-  <li><a href="#">22</a></li>
-  <li><a href="#">23</a></li>
-  <li><a href="#">24</a></li>
-</ul>
                 </div>
             </div>
             
             <div class="tab tab-2">
             <div class="dashboard">
-            <h4>Choose Lecture Type</h4>
             <select name="type" id="type">
         <option value="">Choose Type</option>
         <option value="lecture">Lecture</option>
@@ -108,7 +60,7 @@ $kids.on('click', event => {
         <option value="lecture/practical">Lecture/Practical</option>
     </select><br>
                <h4>Insert Leader</h4>
-               <input type="text" name="leader" id="leader" placeholder="   Insert Leader">
+               <input type="text" name="leader" id="leader" placeholder="Insert Leader">
                 <h4>Insert Topics:</h4>
     <textarea rows="10" cols="100" class="form-control" name="topics" id="topics" rows="3" placeholder="Those are topics for this week."></textarea>
                 <h4>Insert Notes:</h4>
@@ -116,12 +68,12 @@ $kids.on('click', event => {
                 <h4>Insert Assessment:</h4>
     <textarea class="form-control" name="assessment" id="assessment" rows="3" placeholder="Explanation how to assess this week's topics"></textarea>
                 <h4>Insert Resources:</h4>
-    <textarea class="form-control" name="resources" id="resources" rows="3" placeholder="Links to the slides / GitHub Repositories"></textarea><br>
+    <textarea class="form-control" name="resources" id="resources" rows="3" placeholder="Links to the slides / GitHub Repositories"></textarea>
                 <button class="btn btn-success" onclick="addHtmlTableRow();">Add</button>
                 <button class="btn btn-primary" onclick="editHtmlTbleSelectedRow();">Edit</button>
                 <button class="btn btn-danger" onclick="removeSelectedRow();">Remove</button>
             </div>
-          <p class="dash-text">To edit, delete or add table's contect - click on the table row. Row's content will appear in the dashboard. From there you can delete, edit and add new content. Use drag and drop to change row position.</p>  
+          <p class="dash-text">To edit or delete table's contect - click on the table row. Row's content will appear in the dashboard. From there you can delete and edit content.</p>  
         </div>
         </div>
         
@@ -142,7 +94,7 @@ $kids.on('click', event => {
                     resources = document.getElementById("resources").value;
             
                 if(leader === ""){
-                    alert("Please Insert Leader's Name");
+                    alert("Please Insert Leader Name");
                     isEmpty = true;
                 }
                 else if(type === ""){
@@ -150,19 +102,19 @@ $kids.on('click', event => {
                     isEmpty = true;
                 }
                 else if(topics === ""){
-                    alert("Please Insert Topics");
+                    alert("Topics Section Can Not Be Empty");
                     isEmpty = true;
                 }
                 else if(notes === ""){
-                    alert("Please Insert Notes");
+                    alert("Notes Cannot Be Empty");
                     isEmpty = true;
                 }
                 else if(assessment === ""){
-                    alert("Please Complete Assessment Section");
+                    alert("Assessment Section Can Not Be Empty");
                     isEmpty = true;
                 }
                 else if(resources === ""){
-                    alert("Please Insert Resources");
+                    alert("Resources Section Can Not Be Empty");
                 }
                 return isEmpty;
             }
