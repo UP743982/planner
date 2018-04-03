@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Planning Tool for 24 Weeks</title>
+    <meta charset="windows-1252">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel=" stylesheet " href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css ">
+
+    <link rel=" stylesheet " href="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.css ">
+    <link rel="stylesheet " type="text/css " href="/css/style.css ">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.js"></script>
+
+
+</head>
+
+<body>
+    <img src="img/logo/logo.png">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="tab tab-1">
+                    <h1 id="week-number">Week 1</h1>
+                    <ul id="holder" class="pagination pagination parent">
+                        <li><a href="/1">1</a></li>
+                        <li><a href="/2">2</a></li>
+                        <li><a href="/3">3</a></li>
+                        <li><a href="/4">4</a></li>
+                        <li><a href="/5">5</a></li>
+                        <li><a href="/6">6</a></li>
+                        <li><a href="/7">7</a></li>
+                        <li><a href="/8">8</a></li>
+                        <li><a href="/9">9</a></li>
+                        <li><a href="/10">10</a></li>
+                        <li><a href="/11">11</a></li>
+                        <li><a href="/12">12</a></li>
+                        <li><a href="/13">13</a></li>
+                        <li><a href="/14">14</a></li>
+                        <li><a href="/15">15</a></li>
+                        <li><a href="/16">16</a></li>
+                        <li><a href="/17">17</a></li>
+                        <li><a href="/18">18</a></li>
+                        <li><a href="/19">19</a></li>
+                        <li><a href="/20">20</a></li>
+                        <li><a href="/21">21</a></li>
+                        <li><a href="/22">22</a></li>
+                        <li><a href="/23">23</a></li>
+                        <li><a href="/24">24</a></li>
+                    </ul>
+                    <div class="table-container">
+                        <table class="table table-bordered table-hover" border="1">
+                            <thead>
+                                <tr>
+                                    <td>Type</td>
+                                    <td>Leader</td>
+                                    <td>Topics</td>
+                                    <td>Notes</td>
+                                    <td>Assessment</td>
+                                    <td>Resources</td>
+                                </tr>
+                            </thead>
+                            <tbody id="table">
+
+                            </tbody>
+
+                        </table>
+                        <a style="float: right" href="#" id="export-excel">Download</a>
+                    </div>
+<!-- make pagination numbers clickable -->
+                    <script>
+                        $(document).ready(() => {
+
+                            const $kids = $('#holder').children();
+                            $kids.on('click', event => {
+                                $(event.currentTarget).addClass('active');
+                                $(event.currentTarget).siblings().removeClass('active');
+                            });
+                        });
+                    </script>
+
+
+
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div style="background-color: white" class="tab tab-2">
+                    <select name="type" id="type">
+                <option value="">Choose Type</option>
+                <option value="lecture">Lecture</option>
+                <option value="practical">Practical</option>
+                <option value="lecture/practical">Lecture/Practical</option>
+            </select><br> Leader :<input type="text" name="leader" id="leader" placeholder="Insert leader's name"> Topics:
+                    <textarea rows="10" cols="100" class="form-control" name="topics" id="topics" rows="3" placeholder="Those are topics for this week"></textarea> Notes:
+                    <textarea class="form-control" name="notes" id="notes" rows="3" placeholder="Those are notes for the topics"></textarea> Assessment:
+                    <textarea class="form-control" name="assessment" id="assessment" rows="3" placeholder="Explanation how to assess this week's topics"></textarea> Resources:
+                    <textarea class="form-control" name="resources" id="resources" rows="3" placeholder="Links to the slides / GitHub Repositories"></textarea>
+                    <div class="row default-style">
+                        <div class="col-md-1">
+                            <button type="button" class="btn btn-success" id="add-row">Add</button>
+                        </div>
+                        <div class="col-md-1">
+                            <button type="button" class="btn btn-primary" id="update-row">Edit</button>
+
+                        </div>
+                        <div class="col-md-1">
+                            <button type="button" class="btn btn-danger" id="remove-row">Remove</button>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="/js/script.js"></script>
+
+    <script>
+        var planners = <%- JSON.stringify(planners) %>;
+        var rIndex,
+            table = document.getElementById("table");
+
+        function exportExcel() {
+            var export_excel_url = '/export_excel' + window.location.pathname;
+            $("#export-excel").attr("href", export_excel_url);
+        }
+
+        function showinTable() {
+            for (var planner = 0; planner < planners.length; planner++) {
+                var element = planners[planner];
+                console.log(element);
+
+                var newRow = table.insertRow(table.length),
+                    cell1 = newRow.insertCell(0),
+                    cell2 = newRow.insertCell(1),
+                    cell3 = newRow.insertCell(2),
+                    cell4 = newRow.insertCell(3),
+                    cell5 = newRow.insertCell(4),
+                    cell6 = newRow.insertCell(5);
+                $(newRow).attr('id', element['_id']);
+
+                cell1.innerHTML = element['type'];
+                cell2.innerHTML = element['leader'];
+                cell3.innerHTML = element['topics'];
+                cell4.innerHTML = element['notes'];
+                cell5.innerHTML = element['assessment'];
+                cell6.innerHTML = element['resources'];
+
+                // call the function to set the event to the new row
+                selectedRowToInput();
+            }
+
+
+
+        }
+        // check the empty input
+        function checkEmptyInput() {
+            var isEmpty = false,
+                leader = document.getElementById("leader").value,
+                type = document.getElementById("type").value,
+                topics = document.getElementById("topics").value,
+                notes = document.getElementById("notes").value,
+                assessment = document.getElementById("assessment").value,
+                resources = document.getElementById("resources").value;
+
+            if (leader === "") {
+                new Noty({
+                    type: 'warning',
+                    layout: 'topRight',
+                    theme: 'metroui',
+                    timeout: 3000,
+                    text: 'Please Insert Leader Name'
+                }).show();
+                isEmpty = true;
+            } else
+            if (type === "") {
+                new Noty({
+                    type: 'warning',
+                    layout: 'topRight',
+                    theme: 'metroui',
+                    timeout: 3000,
+                    text: 'Please Choose Lecture Type'
+                }).show();
+                isEmpty = true;
+            } else if (topics === "") {
+                new Noty({
+                    type: 'warning',
+                    layout: 'topRight',
+                    theme: 'metroui',
+                    timeout: 3000,
+                    text: 'Topics Section Can Not Be Empty'
+                }).show();
+                isEmpty = true;
+            } else if (notes === "") {
+                new Noty({
+                    type: 'warning',
+                    layout: 'topRight',
+                    theme: 'metroui',
+                    timeout: 3000,
+                    text: 'Notes Cannot Be Empty'
+                }).show();
+                isEmpty = true;
+            } else if (assessment === "") {
+                new Noty({
+                    type: 'warning',
+                    layout: 'topRight',
+                    theme: 'metroui',
+                    timeout: 3000,
+                    text: 'Assessment Section Can Not Be Empty'
+                }).show();
+                isEmpty = true;
+            } else if (resources === "") {
+                new Noty({
+                    type: 'warning',
+                    layout: 'topRight',
+                    theme: 'metroui',
+                    timeout: 3000,
+                    text: 'Resources Section Can Not Be Empty'
+                }).show();
+            }
+            return isEmpty;
+        }
+
+        $(document).ready(function() {
+            if (window.location.pathname == '/') {
+                document.getElementById("week-number").innerHTML = "Week 1";
+            } else {
+                var week_number = window.location.pathname;
+                document.getElementById("week-number").innerHTML = "Week " + week_number.replace('/', '');
+            }
+
+            $('ul a[href="' + location.pathname + '"]').parent().addClass('active');
+            exportExcel()
+            showinTable();
+            $('#add-row').click(function() {
+                if (!checkEmptyInput()) {
+                    var newRow = table.insertRow(table.length),
+                        cell1 = newRow.insertCell(0),
+                        cell2 = newRow.insertCell(1),
+                        cell3 = newRow.insertCell(2),
+                        cell4 = newRow.insertCell(3),
+                        cell5 = newRow.insertCell(4),
+                        cell6 = newRow.insertCell(5),
+                        leader = document.getElementById("leader").value,
+                        type = document.getElementById("type").value,
+                        topics = document.getElementById("topics").value,
+                        notes = document.getElementById("notes").value,
+                        assessment = document.getElementById("assessment").value,
+                        resources = document.getElementById("resources").value;
+
+                    cell1.innerHTML = type;
+                    cell2.innerHTML = leader;
+                    cell3.innerHTML = topics;
+                    cell4.innerHTML = notes;
+                    cell5.innerHTML = assessment;
+                    cell6.innerHTML = resources;
+
+                    // call the function to set the event to the new row
+                    selectedRowToInput();
+                    var week_number = window.location.pathname;
+                    week_number = week_number.replace('/', '');
+                    if (!week_number) {
+                        week_number = '1';
+                    }
+                    $.ajax({
+                        type: 'POST',
+                        url: "/",
+                        data: {
+                            type: type,
+                            leader: leader,
+                            topics: topics,
+                            notes: notes,
+                            assessment: assessment,
+                            resources: resources,
+                            week: week_number,
+                        },
+                        dataType: 'json',
+                        success: function(resultData) {
+                            console.log(resultData);
+                            newRow.id = resultData.content._id;
+                            new Noty({
+                                type: 'success',
+                                layout: 'topRight',
+                                theme: 'metroui',
+                                timeout: 3000,
+                                text: 'Save Complete'
+                            }).show();
+                        }
+                    });
+                }
+
+            });
+
+            $('#remove-row').click(function() {
+                console.log(rIndex);
+
+
+                console.log(table.rows);
+
+                var row = table.rows[rIndex];
+                table.deleteRow(rIndex);
+                console.log(row.id);
+                $.ajax({
+                    type: 'DELETE',
+                    url: "/",
+                    data: {
+                        id: row.id,
+                    },
+                    dataType: 'json',
+                    success: function(resultData) {
+                        new Noty({
+                            type: 'success',
+                            layout: 'topRight',
+                            theme: 'metroui',
+                            timeout: 3000,
+                            text: 'Delete Complete'
+                        }).show();
+                    }
+                });
+                // clear input text
+                document.getElementById("leader").value = "";
+                document.getElementById("type").value = "";
+                document.getElementById("topics").value = "";
+                document.getElementById("notes").value = "";
+                document.getElementById("assessment").value = "";
+                document.getElementById("resources").value = "";
+            });
+            // update row
+            $('#update-row').click(function() {
+                var leader = document.getElementById("leader").value,
+                    type = document.getElementById("type").value,
+                    topics = document.getElementById("topics").value;
+                notes = document.getElementById("notes").value,
+                    assessment = document.getElementById("assessment").value,
+                    resources = document.getElementById("resources").value;
+                if (!checkEmptyInput()) {
+                    console.log(table.rows, rIndex);
+
+                    table.rows[rIndex].cells[0].innerHTML = type;
+                    table.rows[rIndex].cells[1].innerHTML = leader;
+                    table.rows[rIndex].cells[2].innerHTML = topics;
+                    table.rows[rIndex].cells[3].innerHTML = notes;
+                    table.rows[rIndex].cells[4].innerHTML = assessment;
+                    table.rows[rIndex].cells[5].innerHTML = resources;
+                }
+                console.log(table.rows);
+                console.log(rIndex);
+
+                var row = table.rows[rIndex];
+                console.log("row", row.id);
+                $.ajax({
+                    type: 'PUT',
+                    url: "/",
+                    data: {
+                        id: row.id,
+                        type: type,
+                        leader: leader,
+                        topics: topics,
+                        notes: notes,
+                        assessment: assessment,
+                        resources: resources,
+                    },
+                    dataType: 'json',
+                    success: function(resultData) {
+                        new Noty({
+                            type: 'success',
+                            layout: 'topRight',
+                            theme: 'metroui',
+                            timeout: 3000,
+                            text: 'Update Complete'
+                        }).show();
+                    }
+                });
+
+            });
+        });
+
+
+        // display selected row data into input text
+        function selectedRowToInput() {
+
+            for (var i = 0; i < table.rows.length; i++) {
+                table.rows[i].onclick = function() {
+                    // get the seected row index
+                    rIndex = this.rowIndex - 1;
+                    console.log(rIndex);
+
+                    document.getElementById("type").value = this.cells[0].innerHTML;
+                    document.getElementById("leader").value = this.cells[1].innerHTML;
+                    document.getElementById("topics").value = this.cells[2].innerHTML;
+                    document.getElementById("notes").value = this.cells[3].innerHTML;
+                    document.getElementById("assessment").value = this.cells[4].innerHTML;
+                    document.getElementById("resources").value = this.cells[5].innerHTML;
+                };
+            }
+        }
+        selectedRowToInput();
+    </script>
+    <br><br><br><br>
+</body>
+
+</html>

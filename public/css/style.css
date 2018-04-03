@@ -1,0 +1,49 @@
+body {
+    /* background-color: #5500aa; */
+}
+
+.table-container {
+    width: 900px;
+    background-color: white;
+    margin: 10% 0% 10% 0%;
+}
+
+img {
+    width: 300px;
+    padding: 10px;
+}
+
+.container {
+    overflow: hidden
+}
+
+.tab {
+    float: left;
+}
+
+.tab-2 {
+    margin-left: 50px
+}
+
+.tab-2 input {
+    display: block;
+    margin-bottom: 10px
+}
+
+tr {
+    transition: all .25s ease-in-out
+}
+
+tr:hover {
+    background-color: #EEE;
+    cursor: pointer
+}
+
+.default-style {
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+
+.table-container {
+    margin: 0;
+}
