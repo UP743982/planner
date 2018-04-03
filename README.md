@@ -5,9 +5,9 @@ Application is written in HTML/CSS and JS using MongoDB as a choice of database.
 
 *** INSTALLATION ***
 
-1. Initialise mongoDB
+1. Initialize mongoDB
 2. npm install
-3. node app
+3. npm run dashboard
 
 application is running on port 8080
 
